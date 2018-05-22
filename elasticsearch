@@ -1,0 +1,1656 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:801",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "limit": 100,
+        "name": "Annotations & Alerts",
+        "showIn": 0,
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "iteration": 1527016118388,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Jmeter",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 12,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [],
+          "measurement": "jmeter.test",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "thread",
+              "operator": "=",
+              "value": "startedT"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Concurrent Users",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Jmeter",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 8,
+        "y": 0
+      },
+      "id": 14,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [],
+          "measurement": "jmeter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "status",
+              "operator": "=",
+              "value": "ok"
+            },
+            {
+              "condition": "AND",
+              "key": "metric",
+              "operator": "=",
+              "value": "count"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "ok"
+            },
+            {
+              "condition": "AND",
+              "key": "page",
+              "operator": "=~",
+              "value": "/^$filters$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Total Passed Transctions",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "datasource": "Jmeter",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": true,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "id": 16,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "20%",
+      "prefix": "",
+      "prefixFontSize": "20%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "alias": "jmeter.all as Total Errors",
+          "dsType": "influxdb",
+          "groupBy": [],
+          "measurement": "jmeter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "status",
+              "operator": "=",
+              "value": "ko"
+            },
+            {
+              "condition": "AND",
+              "key": "metric",
+              "operator": "=",
+              "value": "count"
+            },
+            {
+              "condition": "AND",
+              "key": "page",
+              "operator": "=~",
+              "value": "/^$filters$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": "50,80",
+      "title": "Total Failed Transactions",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "columns": [],
+      "datasource": "$datasource",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 2,
+      "links": [],
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "hidden"
+        },
+        {
+          "alias": "Sample",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "",
+          "linkUrl": "",
+          "pattern": "SampleLabel.keyword",
+          "thresholds": [],
+          "type": "number",
+          "unit": "hex"
+        },
+        {
+          "alias": "# of samples",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "pattern": "Count",
+          "thresholds": [],
+          "type": "number",
+          "unit": "locale"
+        },
+        {
+          "alias": "Average RT.",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Average ResponseTime",
+          "thresholds": [],
+          "type": "number",
+          "unit": "ms"
+        },
+        {
+          "alias": "Min RT.",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Min",
+          "thresholds": [],
+          "type": "number",
+          "unit": "ms"
+        },
+        {
+          "alias": "Max RT.",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Max",
+          "thresholds": [],
+          "type": "number",
+          "unit": "ms"
+        },
+        {
+          "alias": "Average Byte Received",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Average Bytes",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Average Byte Sent",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Average SentBytes",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "# Error",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "pattern": "Sum",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "6",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "8",
+              "type": "count"
+            },
+            {
+              "field": "ErrorCount",
+              "id": "9",
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            },
+            {
+              "field": "ResponseTime",
+              "id": "10",
+              "meta": {},
+              "settings": {},
+              "type": "min"
+            },
+            {
+              "field": "ResponseTime",
+              "id": "11",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            },
+            {
+              "field": "ResponseTime",
+              "id": "12",
+              "meta": {},
+              "settings": {},
+              "type": "max"
+            },
+            {
+              "field": "Bytes",
+              "id": "17",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            },
+            {
+              "field": "SentBytes",
+              "id": "18",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "A",
+          "timeField": "Timestamp"
+        }
+      ],
+      "title": "Synthesis Report",
+      "transform": "table",
+      "transparent": false,
+      "type": "table"
+    },
+    {
+      "aliasColors": {
+        "# Threads": "#e5ac0e",
+        "Average": "#508642",
+        "Max": "#890f02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$datasource",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 5,
+      "interval": "1s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "# Users",
+          "fill": 0,
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "# Users",
+          "bucketAggs": [
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "AllThreads",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "A",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "{{metric}}",
+          "bucketAggs": [
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "10s",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "hide": false,
+          "metrics": [
+            {
+              "field": "ResponseTime",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            },
+            {
+              "field": "ResponseTime",
+              "id": "4",
+              "meta": {},
+              "settings": {
+                "percents": [
+                  25,
+                  50,
+                  75,
+                  95,
+                  99
+                ]
+              },
+              "type": "percentiles"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "B",
+          "timeField": "Timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Users vs Response Time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": "response time",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "# Users",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "Average 44 /api/px-datamart/facilityscorecard": "#0a50a1"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$datasource",
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 1,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "dashUri": "db/generic-drilldown-dashboard",
+          "dashboard": "Generic Drilldown Dashboard",
+          "includeVars": true,
+          "keepTime": true,
+          "targetBlank": true,
+          "title": "Generic Drilldown Dashboard",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "{{metric}} {{SampleLabel.keyword}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "10s",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "ResponseTime",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            },
+            {
+              "field": "ResponseTime",
+              "hide": true,
+              "id": "4",
+              "meta": {},
+              "settings": {},
+              "type": "max"
+            },
+            {
+              "field": "ResponseTime",
+              "hide": true,
+              "id": "5",
+              "meta": {},
+              "settings": {},
+              "type": "min"
+            },
+            {
+              "field": "ResponseTime",
+              "hide": true,
+              "id": "6",
+              "meta": {},
+              "settings": {
+                "percents": [
+                  "90"
+                ]
+              },
+              "type": "percentiles"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "A",
+          "timeField": "Timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Response time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": false,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": "response time",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$datasource",
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 3,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sort": null,
+        "sortDesc": null,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "dashUri": "db/errors-generics",
+          "dashboard": "Errors Generics",
+          "includeVars": true,
+          "keepTime": true,
+          "targetBlank": true,
+          "title": "Errors Generics",
+          "type": "dashboard"
+        }
+      ],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Global RPS",
+          "color": "#7eb26d",
+          "fill": 1
+        },
+        {
+          "alias": "# Global Error",
+          "color": "#bf1b00",
+          "fill": 1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Overall RPS",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": true,
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "SampleLabel.keyword:All",
+          "refId": "A",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "RPS {{SampleLabel.keyword}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "10s",
+                "min_doc_count": 1,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "B",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "Total Error #",
+          "bucketAggs": [
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "hide": true,
+          "metrics": [
+            {
+              "field": "ErrorCount",
+              "id": "1",
+              "inlineScript": "_value*-1",
+              "meta": {},
+              "settings": {
+                "script": {
+                  "inline": "_value*-1"
+                }
+              },
+              "type": "sum"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "C",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "# Errors {{SampleLabel.keyword}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "10s",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "hide": false,
+          "metrics": [
+            {
+              "field": "ErrorCount",
+              "id": "1",
+              "inlineScript": "_value*-1",
+              "meta": {},
+              "settings": {
+                "script": {
+                  "inline": "_value*-1"
+                }
+              },
+              "type": "sum"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "D",
+          "timeField": "Timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "RPS and error",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "#",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$datasource",
+      "decimals": 1,
+      "fill": 0,
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "id": 8,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Global Sent",
+          "fill": 1
+        },
+        {
+          "alias": "Global Received",
+          "fill": 1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Global Sent",
+          "bucketAggs": [
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": true,
+          "metrics": [
+            {
+              "field": "SentBytes",
+              "id": "1",
+              "inlineScript": "_value*-1",
+              "meta": {},
+              "settings": {
+                "script": {
+                  "inline": "_value*-1"
+                }
+              },
+              "type": "sum"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "A",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "Sent {{SampleLabel.keyword}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "10s",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "SentBytes",
+              "id": "1",
+              "inlineScript": "_value*-1",
+              "meta": {},
+              "settings": {
+                "script": {
+                  "inline": "_value*-1"
+                }
+              },
+              "type": "sum"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "B",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "Global Received",
+          "bucketAggs": [
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "hide": true,
+          "metrics": [
+            {
+              "field": "Bytes",
+              "id": "1",
+              "inlineScript": null,
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "C",
+          "timeField": "Timestamp"
+        },
+        {
+          "alias": "Received {{SampleLabel.keyword}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "SampleLabel.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 1,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "Timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "10s",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "Bytes",
+              "id": "1",
+              "inlineScript": null,
+              "meta": {},
+              "settings": {},
+              "type": "sum"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters",
+          "refId": "D",
+          "timeField": "Timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Bytes Sent and Received",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "columns": [
+        {
+          "text": "Timestamp",
+          "value": "Timestamp"
+        },
+        {
+          "text": "SampleLabel",
+          "value": "SampleLabel"
+        },
+        {
+          "text": "ResponseCode",
+          "value": "ResponseCode"
+        },
+        {
+          "text": "ResponseBody",
+          "value": "ResponseBody"
+        }
+      ],
+      "datasource": "$datasource",
+      "fontSize": "90%",
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 41
+      },
+      "id": 10,
+      "links": [],
+      "pageSize": 75,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "Time of error",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "Timestamp",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "Sample",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "SampleLabel",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "Response Body",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "ResponseBody",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "Status",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "ResponseCode",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "bucketAggs": [],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "meta": {},
+              "settings": {
+                "size": 500
+              },
+              "type": "raw_document"
+            }
+          ],
+          "query": "SampleLabel.keyword:$filters && ErrorCount:1",
+          "refId": "A",
+          "timeField": "Timestamp"
+        }
+      ],
+      "title": "Error Panel",
+      "transform": "json",
+      "type": "table"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "test",
+          "value": "test"
+        },
+        "hide": 0,
+        "label": null,
+        "name": "datasource",
+        "options": [],
+        "query": "elasticsearch",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "POC_A2",
+          "value": [
+            "POC_A2"
+          ]
+        },
+        "datasource": "$datasource",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "filters",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"SampleLabel.keyword\", \"query\": \"\"}",
+        "refresh": 2,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "datasource": "$datasource",
+        "filters": [],
+        "hide": 0,
+        "label": "",
+        "name": "Filters",
+        "type": "adhoc"
+      }
+    ]
+  },
+  "time": {
+    "from": "2018-05-21T18:04:22.026Z",
+    "to": "2018-05-21T19:48:09.977Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "JMeter Updated Dashboard",
+  "uid": "APfxHSzmk",
+  "version": 23
+}
