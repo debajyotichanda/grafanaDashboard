@@ -8,5 +8,4 @@ trigger
 trigger again
 trigger 12
 xxxxxxxxxxxxx
-trigger happy
 more triggger
