@@ -2,5 +2,9 @@
 Sample Grafana Dashboard
 Trigger Jenkins Job
 Demo
-Getting ready for CIBC demo
-Demo for Innovapost 1
+Demo for NBC demo
+Demo for Press-Ganey demo
+Demo for BCI demo
+Demo for TD demo
+Demo for TD demo
+Demo for Innovapost
