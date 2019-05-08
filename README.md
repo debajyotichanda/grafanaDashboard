@@ -3,8 +3,7 @@ Sample Grafana Dashboard
 Trigger Jenkins Job
 Demo
 Ready for NBC demo
-Ready for Press-Ganey demo
-Ready for BCI demo
+eady for BCI demo
 Ready for TD demo
 Ready for Scotia demo
 Ready for Enbridge Demo
