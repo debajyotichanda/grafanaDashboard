@@ -4,12 +4,12 @@ Trigger Jenkins Job
 Demo
 Ready for NBC demo
 eady for BCI demo
-Ready for TD demo
 Ready for Scotia demo
 Ready for Enbridge Demo
+Ready for InnovaPost Demo
+Ready for CIBC Demo
+Ready for Netherlands InnoHub Demo
 Ready For Suncor Demo
-Ready for Liberty Group Demo
-Read
-Testing Build Ny for Jenkins Testumber 
-Testing again
-Innovation Hub
+Ready for LCBO Demo
+Demo for Scott W
+
