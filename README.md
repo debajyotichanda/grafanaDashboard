@@ -11,5 +11,5 @@ Ready for CIBC Demo
 Ready for Netherlands InnoHub Demo
 Ready For Suncor Demo
 Ready for LCBO Demo
-Demo for Scott W
+Demo for Scott Win
 
