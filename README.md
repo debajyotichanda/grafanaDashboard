@@ -17,6 +17,5 @@ Demo For intient
 Test Demo for CN
 Test Demo for GP
 Test Demo for McCormick
-Test for team Shyam and Alapati
-Sprint 1 Demo 25
-Demo Test
+Test demo for EDC - Other than CEBA 
+
